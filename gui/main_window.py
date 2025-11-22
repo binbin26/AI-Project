@@ -103,7 +103,7 @@ class JobShopSchedulingGUI(QMainWindow):
         algo_layout = QVBoxLayout()
         
         self.algorithm_combo = QComboBox()
-        self.algorithm_combo.addItems(["Mô phỏng SA", "Thuật toán Greedy", "Thuật toán ACO"])
+        self.algorithm_combo.addItems(["Thuật toán SA", "Thuật toán Greedy", "Thuật toán ACO"])
         algo_layout.addWidget(QLabel("Chọn Thuật toán:"))
         algo_layout.addWidget(self.algorithm_combo)
         
@@ -244,7 +244,7 @@ class JobShopSchedulingGUI(QMainWindow):
         problem_data = self.problem_input.get_problem_data()
         algorithm = self.algorithm_combo.currentText()
         
-        if algorithm == "Mô phỏng SA":
+        if algorithm == "Thuật toán SA":
             params = self.algorithm_params.get_sa_parameters()
             algo_key = "SA"
         elif algorithm == "Thuật toán Greedy":
@@ -288,7 +288,7 @@ class JobShopSchedulingGUI(QMainWindow):
         self.update_log("Bắt đầu chạy tất cả thuật toán để so sánh...")
         
         # Thiết lập danh sách thuật toán
-        self.batch_algorithms = ["Mô phỏng SA", "Thuật toán Greedy", "Thuật toán ACO"]
+        self.batch_algorithms = ["Thuật toán SA", "Thuật toán Greedy", "Thuật toán ACO"]
         self.current_batch_index = 0
         
         # Lưu thuật toán hiện tại
